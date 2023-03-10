@@ -1,13 +1,12 @@
 import React from "react";
+import Bot from "./bot/Bot";
 
-function BotCollection() {
-  // Your code here
+function BotCollection({ bots }) {
   return (
-    <div className="ui four column grid">
-      <div className="row">
-        {/*...and here..*/}
-        Collection of all bots
-      </div>
+    <div className="d-flex center wrap gap mt-2">
+        {bots.map((key) => (
+          <Bot key={key.id} bot={key} />
+        ))}
     </div>
   );
 }
