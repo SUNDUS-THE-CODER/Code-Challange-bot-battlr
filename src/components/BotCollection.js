@@ -1,7 +1,7 @@
 import React from "react";
 import Bot from "./bot/Bot";
 
-function BotCollection({ bots, enlistBot, dischargeBot, botArmy, deleteBot }) {
+function BotCollection({ bots, enlistBot, demobilizeBot, botArmy, deleteBot }) {
   return (
     <div className="d-flex center wrap gap mt-2">
       {bots.map((key) => (
@@ -10,7 +10,7 @@ function BotCollection({ bots, enlistBot, dischargeBot, botArmy, deleteBot }) {
           bot={key} 
           inMyArmy={botArmy.find(innerKey => innerKey.id === key.id)} 
           enlistBot={enlistBot} 
-          dischargeBot={dischargeBot}
+          demobilizeBot={demobilizeBot}
           deleteBot={deleteBot}
         />
       ))}

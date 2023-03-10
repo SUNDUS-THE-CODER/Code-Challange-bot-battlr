@@ -1,7 +1,7 @@
 import React from "react";
 import Bot from "./bot/Bot";
 
-function YourBotArmy({ botArmy, dischargeBot, deleteBot }) {
+function YourBotArmy({ botArmy, demobilizeBot, deleteBot }) {
   return (
     <div className="ui segment inverted olive bot-army">
       <div className="ui five column grid">
@@ -11,7 +11,7 @@ function YourBotArmy({ botArmy, dischargeBot, deleteBot }) {
             key={key.id} 
             bot={key} 
             inMyArmy={botArmy.find(innerKey => innerKey.id === key.id)} 
-            dischargeBot={dischargeBot}
+            demobilizeBot={demobilizeBot}
             deleteBot={deleteBot}
           />
         ))}

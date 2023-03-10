@@ -3,10 +3,10 @@ import Avatar from './Avatar'
 import BotClass from './BotClass'
 import Stats from './Stats'
 
-const Bot = ({ bot, inMyArmy, dischargeBot, enlistBot, deleteBot }) => {
+const Bot = ({ bot, inMyArmy, demobilizeBot, enlistBot, deleteBot }) => {
   const handleEnlisting = (ev) => {
     ev.preventDefault();
-    inMyArmy ? dischargeBot(bot) : enlistBot(bot);
+    inMyArmy ? demobilizeBot(bot) : enlistBot(bot);
   }
   const handleDeleting = async (ev) => {
     ev.preventDefault();
@@ -26,7 +26,7 @@ const Bot = ({ bot, inMyArmy, dischargeBot, enlistBot, deleteBot }) => {
         <div>
           <div className="d-flex center pt-3">
             <div className="btn-group " role="group">
-              <button type="button" className="btn btn-primary" onClick={handleEnlisting}>{inMyArmy ? 'Discharge' : 'Enlist'}</button>
+              <button type="button" className="btn btn-primary" onClick={handleEnlisting}>{inMyArmy ? 'Dimobilize' : 'Enlist'}</button>
               <button type="button" className="btn btn-danger" onClick={handleDeleting}>Delete</button>
             </div>
           </div>

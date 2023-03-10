@@ -8,7 +8,7 @@ function BotsPage() {
 
   const botsToDisplay = bots.sort((a, b) => b.created_at - a.created_at);
   const enlistBot = (bot) => setBotArmy([...botArmy, bot]);
-  const dischargeBot = (bot) => {
+  const demobilizeBot = (bot) => {
     const arr = botArmy;
     arr.splice(arr.findIndex((key) => key.id === bot.id), 1);
     setBotArmy([...arr]);
@@ -35,8 +35,8 @@ function BotsPage() {
   }, [])
   return (
     <div>
-      <YourBotArmy botArmy={botArmy} dischargeBot={dischargeBot} deleteBot={deleteBot} />
-      <BotCollection bots={botsToDisplay} botArmy={botArmy} enlistBot={enlistBot} dischargeBot={dischargeBot} deleteBot={deleteBot} />
+      <YourBotArmy botArmy={botArmy} demobilizeBot={demobilizeBot} deleteBot={deleteBot} />
+      <BotCollection bots={botsToDisplay} botArmy={botArmy} enlistBot={enlistBot} demobilizeBot={demobilizeBot} deleteBot={deleteBot} />
     </div>
   )
 }
