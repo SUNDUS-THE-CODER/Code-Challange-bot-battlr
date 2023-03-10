@@ -27,6 +27,11 @@ body {
   color: rgba(128, 128, 128, 0.8);
 }
 
+button, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* Bot */
 .bot {
   border: 1px solid rgba(128, 128, 128, 0.5);

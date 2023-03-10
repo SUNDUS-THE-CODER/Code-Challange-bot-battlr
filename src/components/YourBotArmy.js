@@ -1,14 +1,20 @@
 import React from "react";
+import Bot from "./bot/Bot";
 
-function YourBotArmy() {
-  //your bot army code here...
-
+function YourBotArmy({ botArmy, dischargeBot, deleteBot }) {
   return (
     <div className="ui segment inverted olive bot-army">
       <div className="ui five column grid">
-        <div className="row bot-army-row">
-          {/*...and here...*/}
-          Your Bot Army
+      <div className="d-flex center wrap gap mt-2">
+        {botArmy.map((key) => (
+          <Bot 
+            key={key.id} 
+            bot={key} 
+            inMyArmy={botArmy.find(innerKey => innerKey.id === key.id)} 
+            dischargeBot={dischargeBot}
+            deleteBot={deleteBot}
+          />
+        ))}
         </div>
       </div>
     </div>
